@@ -1,0 +1,10 @@
+version: "2"
+services:
+  swagger_ui:
+    image: swaggerapi/swagger-ui:v${SWAGGER_UI_VERSION}
+    volumes:
+      - ./:/usr/share/nginx/html/swagger
+    environment:
+      API_URL: swagger/example.swagger.json
+    ports:
+      - "9998:8080"
